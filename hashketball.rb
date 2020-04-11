@@ -182,3 +182,16 @@ def player_numbers(name)
   end
   return numbers
 end
+
+def player_stats(name)
+  gamehash = game_hash
+  player_info = {}
+  gamehash.each do |key1, value1|
+    value1[:players].each do |value2|
+      if value2[:player_name] == name
+        return value2[:shoe]
+      end
+    end
+  end
+  return player_info
+end
