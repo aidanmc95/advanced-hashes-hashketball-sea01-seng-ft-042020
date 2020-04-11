@@ -195,3 +195,16 @@ def player_stats(name)
   end
   return nil
 end
+
+def big_shoe_rebounds
+  gamehash = game_hash
+  player_info = {}
+  gamehash.each do |key1, value1|
+    value1[:players].each do |value2|
+      if value2[:player_name] == name
+        return value2
+      end
+    end
+  end
+  return nil
+end
