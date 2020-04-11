@@ -189,9 +189,9 @@ def player_stats(name)
   gamehash.each do |key1, value1|
     value1[:players].each do |value2|
       if value2[:player_name] == name
-        return value2[:shoe]
+        return value2.execpt(:player_name)
       end
     end
   end
-  return player_info
+  return nil
 end
