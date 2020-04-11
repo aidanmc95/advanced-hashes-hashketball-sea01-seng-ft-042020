@@ -189,8 +189,7 @@ def player_stats(name)
   gamehash.each do |key1, value1|
     value1[:players].each do |value2|
       if value2[:player_name] == name
-        value2.each { |key| delete(key) }
-        return value2.except(:player_name)
+        return value2.delete(:player_name)
       end
     end
   end
