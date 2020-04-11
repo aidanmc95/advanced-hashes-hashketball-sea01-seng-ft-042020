@@ -201,6 +201,9 @@ def big_shoe_rebounds
   player_info = {}
   gamehash.each do |key1, value1|
     value1[:players].each do |value2|
+      if player_info == {}
+        player_info = value2
+      end
       if player_info[:shoe] < value2[:shoe]
         player_info = value2
       end
